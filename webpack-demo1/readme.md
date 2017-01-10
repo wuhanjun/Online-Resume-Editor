@@ -13,13 +13,14 @@ Babel其实是几个模块化的包，其核心功能位于称为babel-core的np
 ```
 npm i babel-loader babel-core babel-preset-es2015 babel-preset-react
 ```
-本例较为简单，所以配置Bable的文件在webpack.config.js里。
+## 梳理
+1. 本例较为简单，所以配置Bable的文件在webpack.config.js里。
 
-page.html在这里的功能就是加载打包后的bundle.js
+2. page.html在这里的功能就是加载打包后的bundle.js
 
-每次重新运行webpack，bundle.js里都会重新生成新的内容
+3. 每次重新运行webpack，bundle.js里都会重新生成新的内容
 
-.gitignore的作用是防止你把这个目录上传到 GitHub 上。你在新建项目的时候选择 Node，也可以达到同样目的。
+3. .gitignore的作用是防止你把这个目录上传到 GitHub 上。你在新建项目的时候选择 Node，也可以达到同样目的。
 
 ## [导入](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)
 
