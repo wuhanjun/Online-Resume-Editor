@@ -19,6 +19,8 @@ page.html在这里的功能就是加载打包后的bundle.js
 
 每次重新运行webpack，bundle.js里都会重新生成新的内容
 
+.gitignore的作用是防止你把这个目录上传到 GitHub 上。你在新建项目的时候选择 Node，也可以达到同样目的。
+
 ## 导入
 
 - 导入的模型写法主要分以下4种
