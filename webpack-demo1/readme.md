@@ -21,7 +21,7 @@ page.html在这里的功能就是加载打包后的bundle.js
 
 .gitignore的作用是防止你把这个目录上传到 GitHub 上。你在新建项目的时候选择 Node，也可以达到同样目的。
 
-## 导入
+## [导入](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)
 
 - 导入的模型写法主要分以下4种
 
@@ -36,7 +36,7 @@ page.html在这里的功能就是加载打包后的bundle.js
 2. 用MyModule和{显式命名的成员foo1, foo2}同时导入时，
 myModule.foo1  和 foo1完全相同 
 
-## 导出
+## [导出](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/export)
 
 命名导出
 默认导出（一个脚本只能有一个）
