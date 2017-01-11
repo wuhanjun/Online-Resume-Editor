@@ -32,7 +32,7 @@ npm i babel-loader babel-core babel-preset-es2015 babel-preset-react
 
 ## [导入](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)[建议你先花2分钟看两眼import和export，过完本例后再把MDN里的例子跑一遍。]
 
-- 导入的模型写法主要分以下4种
+- 导入的模型写法主要分以下5种
 
 1. defaultMember（myDefault）
 2. `*` as (随意名字)
