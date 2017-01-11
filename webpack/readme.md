@@ -7,8 +7,7 @@
 
 [基础](https://github.com/jirengu-inc/jrg-project-5/issues/1)
 [进阶](http://www.jianshu.com/p/42e11515c10f)
-## Babel
-
+## Babel【一点基础知识】
 Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过编译帮你达到以下目的：
 1. 下一代的JavaScript标准（ES6，ES7），这些标准目前并未被当前的浏览器完全的支持；
 2. 使用基于JavaScript进行了拓展的语言，比如React的JSX
