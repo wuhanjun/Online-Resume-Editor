@@ -1,3 +1,10 @@
+## 如何运行本 demo
+1. 安装 Node.js 和 NPM
+2. npm i -g webpack
+3. npm i babel-loader babel-core babel-preset-es2015 babel-preset-react
+4. webpack
+5. 打开 page.html
+
 [基础](https://github.com/jirengu-inc/jrg-project-5/issues/1)
 [进阶](http://www.jianshu.com/p/42e11515c10f)
 ## Babel
