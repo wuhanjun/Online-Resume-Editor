@@ -7,7 +7,8 @@
 
 [基础](https://github.com/jirengu-inc/jrg-project-5/issues/1)
 [进阶](http://www.jianshu.com/p/42e11515c10f)
-## Babel【一点基础知识】
+## Babel
+- 【一点基础知识】
 Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过编译帮你达到以下目的：
 1. 下一代的JavaScript标准（ES6，ES7），这些标准目前并未被当前的浏览器完全的支持；
 2. 使用基于JavaScript进行了拓展的语言，比如React的JSX
@@ -21,7 +22,7 @@ Babel其实是几个模块化的包，其核心功能位于称为babel-core的np
 ```
 npm i babel-loader babel-core babel-preset-es2015 babel-preset-react
 ```
-## 梳理
+## 一些细节
 1. 本例没有生产环境中的文件复杂，所以配置Bable的依赖模块信息都在webpack.config.js里。
 
 2. page.html在这里的功能就是加载打包后的bundle.js
@@ -30,7 +31,8 @@ npm i babel-loader babel-core babel-preset-es2015 babel-preset-react
 
 3. .gitignore的作用是防止你把依赖模块的目录上传到 GitHub 上【很大。。】。你在新建项目的时候选择 Node，也可以达到同样目的。
 
-## [导入](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)[建议你先花2分钟看两眼import和export，过完本例后再把MDN里的例子跑一遍。]
+## [导入](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)
+#### [建议你先花2分钟看两眼import和export，至少知道这俩ES6的是干啥的。过完本例后再把MDN里的例子跑一遍。]
 
 - 导入的模型写法主要分以下5种
 
