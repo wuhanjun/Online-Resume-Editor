@@ -28,6 +28,7 @@ npm install
 
 打开page.html
 
+## copy-run-modify the Vue
 
 ### 啰嗦版
 
