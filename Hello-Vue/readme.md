@@ -29,7 +29,7 @@ npm install
 打开page.html
 
 ## copy-run-modify the Vue
-
+[Vue.js](https://cn.vuejs.org/v2/guide/syntax.html)
 ### 啰嗦版
 
 - mkdir
