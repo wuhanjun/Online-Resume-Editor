@@ -10,3 +10,7 @@ npm WARN test No license field.
 2. readme.md
 npm -S xxxxx模块名
 后来npm i就可以直接安装dependencies里的内容了。
+（webpack也会被安装，只不过是被安装在该目录下的node_modules里面）
+webpack -v看不出来因为不是全局安装，
+
+`./node_modules/.bin/webpack`这个命令就可以执行wepack
