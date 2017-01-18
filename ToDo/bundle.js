@@ -64,7 +64,7 @@
 	    data: {
 	        newTodo: '', //����ֵ��newTodo��ֵͨ��v-model˫������
 	        todoList: [], //v-on�س�֮����ֵ����������
-	        inputData: [{ ct: '' }]
+	        inputData: [{ ct: ' ' }]
 	    },
 	    methods: {
 	        save: function save() {
@@ -116,10 +116,10 @@
 
 	        var oldInputDataString = window.localStorage.getItem('save');
 	        var oldInputData = JSON.parse(oldInputDataString); //[obj1, obj2,....objn]
-	        if (oldInputData.length) {
+	        if (oldInputData) {
 	            this.inputData.push(oldInputData[oldInputData.length - 1]);
 	        } else {
-	            this.InputData = [{ ct: '' }];
+	            this.InputData = [{ ct: ' ' }];
 	        }
 	    }
 	});

@@ -3,12 +3,12 @@
  */
 import Vue from 'vue';
 import style from './style.css'
-var app = new Vue({  
+var app = new Vue({
     el: '#app',
     data: {
         newTodo: '', //输入值和newTodo的值通过v-model双向绑定
         todoList: [], //v-on回车之后将值传入数组内
-        inputData: [{ct:''}]
+        inputData: [{ct:' '}]
     },
     methods: {
         save: function () {
@@ -63,10 +63,10 @@ var app = new Vue({
 
         let oldInputDataString = window.localStorage.getItem('save')
         let oldInputData = JSON.parse(oldInputDataString)  //[obj1, obj2,....objn]
-        if(oldInputData.length){
+        if(oldInputData){
             this.inputData.push ( oldInputData[oldInputData.length - 1] )
         }else {
-            this.InputData =  [{ct:''}]
+            this.InputData =  [{ct:' '}]
         }
 
 
