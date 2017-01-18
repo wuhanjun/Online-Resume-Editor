@@ -8,8 +8,10 @@
     <img class="img" src="https://cn.vuejs.org/images/logo.png" alt="img"/>
     <div id="app">                                                        <!--1. 不能输入大段文字，否则异常；-->
         <div class="newTask">                                             <!--2. 单选框和文字对不齐。-->
-            <p class="saying">A good plan today is better than a perfect plan tomorrow.</p>
-            <input class="ipt" type="text" v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="edit me"/>
+            <p class="saying">True liberty is to have power over oneself in all things. </p>
+
+            <input class="ipt" type="text" v-model="newTodo" v-on:keyup.enter="addTodo" v-on:input="save"  placeholder="edit me"/>
+            <p class="record">I hear you now：    {{this.inputData[inputData.length-1].ct}}</p>
         </div>                                                            <!--3. 在控制台中将document.querySelector('input').value赋值，不会改变。-->
         <ol class="todos">                                                <!--4. 如何按下enter阻止他的默认事件-->
             <li v-for="todo in todoList">

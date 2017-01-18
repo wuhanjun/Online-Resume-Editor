@@ -59,13 +59,20 @@
 	/**
 	 * Created by lenovo on 2017/1/10.
 	 */
-	var app = new _vue2.default({ //��github�����
+	var app = new _vue2.default({
 	    el: '#app',
 	    data: {
 	        newTodo: '', //����ֵ��newTodo��ֵͨ��v-model˫������
-	        todoList: [] //v-on�س�֮����ֵ����������
+	        todoList: [], //v-on�س�֮����ֵ����������
+	        inputData: [{ ct: '' }]
 	    },
 	    methods: {
+	        save: function save() {
+	            this.inputData.push({
+	                ct: this.newTodo
+	            });
+	            console.log(this.inputData);
+	        },
 	        addTodo: function addTodo() {
 	            var date = new Date(),
 	                year = date.getFullYear(),
@@ -75,7 +82,6 @@
 	                minute = date.getMinutes(),
 	                second = date.getSeconds(),
 	                time = year + '-' + '' + (month < 10 ? '0' : '') + month + '-' + '' + (day < 10 ? '0' : '') + day + ' ' + (hour < 10 ? '0' : '') + hour + ':' + (minute < 10 ? '0' : '') + minute + ':' + (second < 10 ? '0' : '') + second;
-
 	            if (this.newTodo) {
 	                this.todoList.push({
 	                    title: this.newTodo,
@@ -83,6 +89,7 @@
 	                    done: false });
 	            }
 	            this.newTodo = '';
+	            this.save();
 	        },
 	        removeTodo: function removeTodo(todo) {
 	            var idx = this.todoList.indexOf(todo);
@@ -97,12 +104,23 @@
 	        window.onbeforeunload = function () {
 	            //��ҳ���رջ�ˢ�µ�ʱ��ִ��һ������
 	            var dataString = JSON.stringify(_this.todoList);
-	            window.localStorage.setItem('myTodos', dataString);
+	            window.localStorage.setItem('myTodos', dataString); //ҳ���رյ�ʱ�򱣴����������е�ֵ
+
+	            var inputDataString = JSON.stringify(_this.inputData);
+	            window.localStorage.setItem('save', inputDataString);
 	        }; //localStorage���涼���ַ�����
 
 	        var oldDataString = window.localStorage.getItem('myTodos'); //�û�����ҳ��֮��������ȡlocalStorage�е�����
 	        var oldData = JSON.parse(oldDataString);
 	        this.todoList = oldData || [];
+
+	        var oldInputDataString = window.localStorage.getItem('save');
+	        var oldInputData = JSON.parse(oldInputDataString); //[obj1, obj2,....objn]
+	        if (oldInputData.length) {
+	            this.inputData.push(oldInputData[oldInputData.length - 1]);
+	        } else {
+	            this.InputData = [{ ct: '' }];
+	        }
 	    }
 	});
 
@@ -8849,7 +8867,7 @@
 
 
 	// module
-	exports.push([module.id, "button, input {\r\n    margin: 0;\r\n}\r\nbody {\r\n    background-color: #eee;\r\n}\r\n.img {\r\n    width: 200px;\r\n    height: 200px;\r\n    display: block;\r\n    margin: 60px auto 0;\r\n}\r\n#app {\r\n    margin: 0 auto;\r\n    width: 700px;\r\n    padding-top: 40px;\r\n\r\n}\r\n.ipt {\r\n    width: 500px;\r\n    height: 30px;\r\n    line-height: 30px;\r\n    font-size: 16px;\r\n    border-radius: 6px; /*��û��дborder��ʱ��ֱ��дborder-radius�����쳣*/\r\n    border: 2px solid #ccc;\r\n    margin-left: 100px;\r\n}\r\n.ipt:focus {\r\n    outline: none;\r\n    border-color: #66afe9;\r\n    box-shadow:0 0 8px rgba(102,175,233,.6)\r\n}\r\n.module {\r\n    float: right;\r\n}\r\n.conplete:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both;\r\n}\r\n.module span {\r\n    margin-right: 20px;\r\n}\r\n.todos {\r\n    padding-left: 25px;/*������*/\r\n}\r\n.todos li {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n}\r\n.module button {\r\n    background-color: #eee;\r\n}\r\n.todos li:hover {\r\n    background-color: #fff;\r\n}\r\n.saying {\r\n    margin:0 auto 20px;\r\n    width: 456px;\r\n}\r\n\r\n\r\n\r\n", ""]);
+	exports.push([module.id, "button, input {\r\n    margin: 0;\r\n}\r\nbody {\r\n    background-color: #eee;\r\n}\r\n.img {\r\n    width: 200px;\r\n    height: 200px;\r\n    display: block;\r\n    margin: 60px auto 0;\r\n}\r\n#app {\r\n    margin: 0 auto;\r\n    width: 700px;\r\n    padding-top: 40px;\r\n\r\n}\r\n.ipt {\r\n    width: 500px;\r\n    height: 30px;\r\n    line-height: 30px;\r\n    font-size: 16px;\r\n    border-radius: 6px; /*��û��дborder��ʱ��ֱ��дborder-radius�����쳣*/\r\n    border: 2px solid #ccc;\r\n    margin-left: 100px;\r\n}\r\n.ipt:focus {\r\n    outline: none;\r\n    border-color: #66afe9;\r\n    box-shadow:0 0 8px rgba(102,175,233,.6)\r\n}\r\n.module {\r\n    float: right;\r\n}\r\n.conplete:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both;\r\n}\r\n.module span {\r\n    margin-right: 20px;\r\n}\r\n.todos {\r\n    padding-left: 25px;/*������*/\r\n}\r\n.todos li {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n}\r\n.module button {\r\n    background-color: #eee;\r\n}\r\n.todos li:hover {\r\n    background-color: #fff;\r\n}\r\n.saying {\r\n    margin:0 auto 20px;\r\n    width: 456px;\r\n}\r\n.newTask .record {\r\n    margin-left: 97px;\r\n}\r\n\r\n\r\n\r\n", ""]);
 
 	// exports
 

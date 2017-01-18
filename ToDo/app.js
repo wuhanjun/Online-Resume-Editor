@@ -3,13 +3,20 @@
  */
 import Vue from 'vue';
 import style from './style.css'
-var app = new Vue({   //¿¿github¿¿¿¿¿
+var app = new Vue({  
     el: '#app',
     data: {
         newTodo: '', //ÊäÈëÖµºÍnewTodoµÄÖµÍ¨¹ıv-modelË«Ïò°ó¶¨
-        todoList: [] //v-on»Ø³µÖ®ºó½«Öµ´«ÈëÊı×éÄÚ
+        todoList: [], //v-on»Ø³µÖ®ºó½«Öµ´«ÈëÊı×éÄÚ
+        inputData: [{ct:''}]
     },
     methods: {
+        save: function () {
+            this.inputData.push({
+                ct: this.newTodo
+            });
+            console.log(this.inputData);
+        },
         addTodo: function () {
             var date = new Date(),
                 year = date.getFullYear(),
@@ -24,8 +31,6 @@ var app = new Vue({   //¿¿github¿¿¿¿¿
                     + ( (hour < 10) ? '0' : '' ) +  hour + ':'
                     + ( (minute < 10) ? '0': '' ) + minute + ':'
                     + ((second < 10) ? '0' : '') + second;
-
-           
             if(this.newTodo){
                 this.todoList.push({
                     title: this.newTodo,
@@ -34,6 +39,7 @@ var app = new Vue({   //¿¿github¿¿¿¿¿
                 });
             }
             this.newTodo = '';
+            this.save();
         },
         removeTodo: function (todo) {
             var idx = this.todoList.indexOf(todo);
@@ -44,12 +50,26 @@ var app = new Vue({   //¿¿github¿¿¿¿¿
         // onbeforeunloadÎÄµµ£ºhttps://developer.mozilla.org/zh-CN/docs/Web/API/Window/onbeforeunload
         window.onbeforeunload = ()=>{  //µ±Ò³Ãæ¹Ø±Õ»òË¢ĞÂµÄÊ±ºòÖ´ĞĞÒ»¸ö·½·¨
             let dataString = JSON.stringify(this.todoList)
-            window.localStorage.setItem('myTodos', dataString)
+            window.localStorage.setItem('myTodos', dataString)  //Ò³Ãæ¹Ø±ÕµÄÊ±ºò±£´æÔÚÊäÈë¿òÖĞµÄÖµ
+
+            let inputDataString = JSON.stringify(this.inputData)
+            window.localStorage.setItem('save', inputDataString)
+
         };//localStorageÀïÃæ¶¼ÊÇ×Ö·û´®¡£
 
         let oldDataString = window.localStorage.getItem('myTodos')  //ÓÃ»§½øÈëÒ³ÃæÖ®ºóÁ¢¼´¶ÁÈ¡localStorageÖĞµÄÊı¾İ
         let oldData = JSON.parse(oldDataString)
         this.todoList = oldData || []
+
+        let oldInputDataString = window.localStorage.getItem('save')
+        let oldInputData = JSON.parse(oldInputDataString)  //[obj1, obj2,....objn]
+        if(oldInputData.length){
+            this.inputData.push ( oldInputData[oldInputData.length - 1] )
+        }else {
+            this.InputData =  [{ct:''}]
+        }
+
+
     }
 });
 
