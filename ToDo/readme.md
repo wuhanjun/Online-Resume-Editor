@@ -1,6 +1,6 @@
 # a Todo
 
-## [预览地址](https://wuhanjun.github.io/Online-Resume-Editor/ToDo/page.html)
+## [预览地址](https://wuhanjun.github.io/Online-Resume-Editor/ToDo/page2.html)
 
 ## 运行指南
 
