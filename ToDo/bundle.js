@@ -66,16 +66,8 @@
 	    el: '#app',
 	    data: {
 	        newTodo: '', //����ֵ��newTodo��ֵͨ��v-model˫������
-	        todoList: [], //v-on�س�֮����ֵ����������
-	        inputData: [{ ct: ' ' }]
-	    },
+	        todoList: [] },
 	    methods: {
-	        save: function save() {
-	            this.inputData.push({
-	                ct: this.newTodo
-	            });
-	            console.log(this.inputData);
-	        },
 	        addTodo: function addTodo() {
 	            var date = new Date(),
 	                year = date.getFullYear(),
@@ -92,7 +84,6 @@
 	                    done: false });
 	            }
 	            this.newTodo = '';
-	            this.save();
 	        },
 	        removeTodo: function removeTodo(todo) {
 	            var idx = this.todoList.indexOf(todo);
@@ -109,20 +100,14 @@
 	            var dataString = JSON.stringify(_this.todoList);
 	            window.localStorage.setItem('myTodos', dataString); //ҳ���رյ�ʱ�򱣴����������е�ֵ
 
-	            var newTodoString = JSON.stringify(_this.newTodo);
-	            window.localStorage.setItem('save', newTodoString);
+	            window.localStorage.setItem('save', _this.newTodo);
 	        }; //localStorage���涼���ַ�����
 
 	        var oldDataString = window.localStorage.getItem('myTodos'); //�û�����ҳ��֮��������ȡlocalStorage�е�����
 	        var oldData = JSON.parse(oldDataString);
 	        this.todoList = oldData || [];
-	        if (window.localStorage.getItem('save')) {
-	            var oldInputDataString = window.localStorage.getItem('save');
-	            // let oldInputData = JSON.parse(oldInputDataString)  //[obj1, obj2,....objn]
-	            var newTodo = oldInputDataString;
-	        } else {
-	            this.newTodo = '';
-	        }
+
+	        this.newTodo = window.localStorage.getItem('save') || '';
 	    }
 	});
 
