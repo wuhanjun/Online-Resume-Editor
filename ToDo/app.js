@@ -3,7 +3,7 @@
  */
 import Vue from 'vue';
 import style from './style.css'
-var app = new Vue({
+var app = new Vue({   //¿¿github¿¿¿¿¿
     el: '#app',
     data: {
         newTodo: '', //ÊäÈëÖµºÍnewTodoµÄÖµÍ¨¹ıv-modelË«Ïò°ó¶¨
@@ -25,7 +25,7 @@ var app = new Vue({
                     + ( (minute < 10) ? '0': '' ) + minute + ':'
                     + ((second < 10) ? '0' : '') + second;
 
-            console.log(time);
+           
             if(this.newTodo){
                 this.todoList.push({
                     title: this.newTodo,
