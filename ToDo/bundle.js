@@ -57,6 +57,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
+	 * Created by lenovo on 2017/1/18.
+	 */
+	/**
 	 * Created by lenovo on 2017/1/10.
 	 */
 	var app = new _vue2.default({
@@ -106,20 +109,19 @@
 	            var dataString = JSON.stringify(_this.todoList);
 	            window.localStorage.setItem('myTodos', dataString); //ҳ���رյ�ʱ�򱣴����������е�ֵ
 
-	            var inputDataString = JSON.stringify(_this.inputData);
-	            window.localStorage.setItem('save', inputDataString);
+	            var newTodoString = JSON.stringify(_this.newTodo);
+	            window.localStorage.setItem('save', newTodoString);
 	        }; //localStorage���涼���ַ�����
 
 	        var oldDataString = window.localStorage.getItem('myTodos'); //�û�����ҳ��֮��������ȡlocalStorage�е�����
 	        var oldData = JSON.parse(oldDataString);
 	        this.todoList = oldData || [];
-
-	        var oldInputDataString = window.localStorage.getItem('save');
-	        var oldInputData = JSON.parse(oldInputDataString); //[obj1, obj2,....objn]
-	        if (oldInputData) {
-	            this.inputData.push(oldInputData[oldInputData.length - 1]);
+	        if (window.localStorage.getItem('save')) {
+	            var oldInputDataString = window.localStorage.getItem('save');
+	            // let oldInputData = JSON.parse(oldInputDataString)  //[obj1, obj2,....objn]
+	            var newTodo = oldInputDataString;
 	        } else {
-	            this.InputData = [{ ct: ' ' }];
+	            this.newTodo = '';
 	        }
 	    }
 	});

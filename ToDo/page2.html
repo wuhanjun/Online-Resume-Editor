@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>A todo</title>
+</head>
+<body>                                                                    <!--发现的问题：-->
+<img class="img" src="https://cn.vuejs.org/images/logo.png" alt="img"/>
+<div id="app">                                                        <!--1. 不能输入大段文字，否则异常；-->
+    <div class="newTask">                                             <!--2. 单选框和文字对不齐。-->
+        <p class="saying">True liberty is to have power over oneself in all things. </p>
+
+        <input class="ipt" type="text" v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="edit me"/>
+    </div>                                                            <!--3. 在控制台中将document.querySelector('input').value赋值，不会改变。-->
+    <ol class="todos">                                                <!--4. 如何按下enter阻止他的默认事件-->
+        <li v-for="todo in todoList">
+            <input type="checkbox" v-model="todo.done"/>
+            <span class="content">{{todo.title}}</span>               <!--5. 每个id如何取到不一样的值来让label生效-->
+            <div class="module">
+                <span v-if="todo.done">Done</span>                    <!--input通过v-model和todo.done绑定，默认为false,选中之后v-model的值变成true-->
+                <span v-else>Undone</span>                            <!--v-model会根据控件类型自动选取正确的方法来更新元素-->
+                {{todo.createdAt}}
+                <button @click="removeTodo(todo)">X</button>          <!--6. 这个this还是todo,很混乱。是todo-->
+            </div>
+        </li>
+    </ol>
+</div>
+
+<script src="bundle.js"></script>
+</body>
+</html>

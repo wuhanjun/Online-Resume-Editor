@@ -2,7 +2,7 @@
  * Created by lenovo on 2017/1/10.
  */
 module.exports = {
-    entry: './app.js',  //入口文件
+    entry: './app2.js',  //入口文件
     output: {
         filename: 'bundle.js'
     },  //这些功能起始在命令行里也可以操作，但是写在这个配置文件这里不容易出错且简单
