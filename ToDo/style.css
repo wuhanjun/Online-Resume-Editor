@@ -1,0 +1,63 @@
+button, input {
+    margin: 0;
+}
+body {
+    background-color: #eee;
+}
+.img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 60px auto 0;
+}
+#app {
+    margin: 0 auto;
+    width: 700px;
+    padding-top: 40px;
+
+}
+.ipt {
+    width: 500px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    border-radius: 6px; /*在没有写border的时候直接写border-radius会出异常*/
+    border: 2px solid #ccc;
+    margin-left: 100px;
+}
+.ipt:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow:0 0 8px rgba(102,175,233,.6)
+}
+.module {
+    float: right;
+}
+.conplete:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.module span {
+    margin-right: 20px;
+}
+.todos {
+    padding-left: 25px;/*不明白*/
+}
+.todos li {
+    margin-top: 10px;
+    padding: 10px;
+}
+.module button {
+    background-color: #eee;
+}
+.todos li:hover {
+    background-color: #fff;
+}
+.saying {
+    margin:0 auto 20px;
+    width: 456px;
+}
+
+
+
