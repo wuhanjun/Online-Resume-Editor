@@ -12,7 +12,7 @@ mkdir todo-demo
 clone我的项目到你的本地 
 
 ```
-git@github.com:WuHanJun/Online-Resume-Editor/ToDo.git
+git@github.com:WuHanJun/Online-Resume-Editor.git
 ```
 
 安装依赖
