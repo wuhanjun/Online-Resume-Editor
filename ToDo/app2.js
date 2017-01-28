@@ -4,8 +4,8 @@
 /**
  * Created by lenovo on 2017/1/10.
  */
-import Vue from 'vue';
-import style from './style.css'
+import Vue from './node_modules/vue/dist/vue.common';//如果只写vue，会自动去modules目录下找，根据的是webpack.config.js中的alias制动的目录。
+import style from './style.css'  //如果写完整路径，就必须写vue.js||vue.common.js||vue.min.js而不是runtime的js
 var app = new Vue({
     el: '#app',
     data: {
@@ -45,9 +45,9 @@ var app = new Vue({
         // onbeforeunload文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onbeforeunload
         window.onbeforeunload = ()=>{  //当页面关闭或刷新的时候执行一个方法
             let dataString = JSON.stringify(this.todoList)
-            window.localStorage.setItem('myTodos', dataString)  //页面关闭的时候保存在输入框中的值
+            window.localStorage.setItem('myTodos', dataString)
 
-            window.localStorage.setItem('save', this.newTodo)
+            window.localStorage.setItem('save', this.newTodo)//页面关闭的时候保存在输入框中的值
 
         };//localStorage里面都是字符串。
 

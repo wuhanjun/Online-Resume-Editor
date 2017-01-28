@@ -59,10 +59,37 @@ body {
     width: 456px;
 }
 .newTask .record {
-    position: absolute;
-    left: 20px;
-    top: 20px;
+    margin-left: 97px;
 }
+#todo .basic-information {
+    float: right;
+}
+#signInAndLogin {
+    width: 400px;
+
+    margin: 0 auto;
+    margin-left: 236px;
+}
+#signInAndLogin .account {
+    margin-left: 11px;
+}
+#signInAndLogin .password {
+    margin-left: 27px;
+}
+#signInAndLogin .cicle {
+    margin-left: 29px;
+    margin-bottom: 10px;
+}
+#signInAndLogin .cicle label{
+    margin-left: 27px;
+
+}
+#signInAndLogin .formActions{
+    margin-left: 95px;
+    margin-top: 20px;
+
+}
+
 
 
 

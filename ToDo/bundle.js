@@ -56,6 +56,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//����д����·�����ͱ���дvue.js||vue.common.js||vue.min.js������runtime��js
 	/**
 	 * Created by lenovo on 2017/1/18.
 	 */
@@ -98,9 +99,9 @@
 	        window.onbeforeunload = function () {
 	            //��ҳ���رջ�ˢ�µ�ʱ��ִ��һ������
 	            var dataString = JSON.stringify(_this.todoList);
-	            window.localStorage.setItem('myTodos', dataString); //ҳ���رյ�ʱ�򱣴����������е�ֵ
+	            window.localStorage.setItem('myTodos', dataString);
 
-	            window.localStorage.setItem('save', _this.newTodo);
+	            window.localStorage.setItem('save', _this.newTodo); //ҳ���رյ�ʱ�򱣴����������е�ֵ
 	        }; //localStorage���涼���ַ�����
 
 	        var oldDataString = window.localStorage.getItem('myTodos'); //�û�����ҳ��֮��������ȡlocalStorage�е�����
@@ -109,7 +110,7 @@
 
 	        this.newTodo = window.localStorage.getItem('save') || '';
 	    }
-	});
+	}); //����ֻдvue�����Զ�ȥmodulesĿ¼���ң����ݵ���webpack.config.js�е�alias�ƶ���Ŀ¼��
 
 /***/ },
 /* 1 */
@@ -8854,7 +8855,7 @@
 
 
 	// module
-	exports.push([module.id, "button, input {\r\n    margin: 0;\r\n}\r\nbody {\r\n    background-color: #eee;\r\n}\r\n.img {\r\n    width: 200px;\r\n    height: 200px;\r\n    display: block;\r\n    margin: 60px auto 0;\r\n}\r\n#app {\r\n    margin: 0 auto;\r\n    width: 700px;\r\n    padding-top: 40px;\r\n\r\n}\r\n.ipt {\r\n    width: 500px;\r\n    height: 30px;\r\n    line-height: 30px;\r\n    font-size: 16px;\r\n    border-radius: 6px; /*��û��дborder��ʱ��ֱ��дborder-radius�����쳣*/\r\n    border: 2px solid #ccc;\r\n    margin-left: 100px;\r\n}\r\n.ipt:focus {\r\n    outline: none;\r\n    border-color: #66afe9;\r\n    box-shadow:0 0 8px rgba(102,175,233,.6)\r\n}\r\n.module {\r\n    float: right;\r\n}\r\n.conplete:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both;\r\n}\r\n.module span {\r\n    margin-right: 20px;\r\n}\r\n.todos {\r\n    padding-left: 25px;/*������*/\r\n}\r\n.todos li {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n}\r\n.module button {\r\n    background-color: #eee;\r\n}\r\n.todos li:hover {\r\n    background-color: #fff;\r\n}\r\n.saying {\r\n    margin:0 auto 20px;\r\n    width: 456px;\r\n}\r\n.newTask .record {\r\n    margin-left: 97px;\r\n}\r\n\r\n\r\n\r\n", ""]);
+	exports.push([module.id, "button, input {\r\n    margin: 0;\r\n}\r\nbody {\r\n    background-color: #eee;\r\n}\r\n.img {\r\n    width: 200px;\r\n    height: 200px;\r\n    display: block;\r\n    margin: 60px auto 0;\r\n}\r\n#app {\r\n    margin: 0 auto;\r\n    width: 700px;\r\n    padding-top: 40px;\r\n\r\n}\r\n.ipt {\r\n    width: 500px;\r\n    height: 30px;\r\n    line-height: 30px;\r\n    font-size: 16px;\r\n    border-radius: 6px; /*��û��дborder��ʱ��ֱ��дborder-radius�����쳣*/\r\n    border: 2px solid #ccc;\r\n    margin-left: 100px;\r\n}\r\n.ipt:focus {\r\n    outline: none;\r\n    border-color: #66afe9;\r\n    box-shadow:0 0 8px rgba(102,175,233,.6)\r\n}\r\n.module {\r\n    float: right;\r\n}\r\n.conplete:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both;\r\n}\r\n.module span {\r\n    margin-right: 20px;\r\n}\r\n.todos {\r\n    padding-left: 25px;/*������*/\r\n}\r\n.todos li {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n}\r\n.module button {\r\n    background-color: #eee;\r\n}\r\n.todos li:hover {\r\n    background-color: #fff;\r\n}\r\n.saying {\r\n    margin:0 auto 20px;\r\n    width: 456px;\r\n}\r\n.newTask .record {\r\n    position: absolute;\r\n    left: 20px;\r\n    top: 20px;\r\n}\r\n\r\n\r\n\r\n", ""]);
 
 	// exports
 

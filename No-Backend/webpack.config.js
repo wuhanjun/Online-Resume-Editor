@@ -22,12 +22,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.common.js'  //这就是独立构建。 在app.js中引用vue，直接引用的是vue/dist/vue.common.js这个文件
+            'vue$': 'vue/dist/vue.common.js'
         }
-    },
-    /*
-    "browser": {
-        "vue": "vue/dist/vue.common"
-    },*/
+    }
 };
 
