@@ -1,6 +1,6 @@
 # a Todo
 
-## [预览地址](https://wuhanjun.github.io/Online-Resume-Editor/ToDo/page2.html)
+## [预览地址]https://wuhanjun.github.io/Online-Resume-Editor/No-Backend/page2.html)
 
 ## 运行指南
 
@@ -26,8 +26,8 @@ npm install
 ./node_modules/.bin/webpack
 ```
 
-打开page.html
+打开page2.html
 
-## copy-run-modify the ToDo
+## copy-run-modify the demo
 
 
