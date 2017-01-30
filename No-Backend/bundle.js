@@ -236,27 +236,12 @@
 
 	        window.onbeforeunload = function () {
 	            var dataString = JSON.stringify(_this5.todoList);
-	            // window.localStorage.setItem('myTodos', dataString)
-
-	            /*  var AVTodos = AV.Object.extend('AllTodos');
-	               var avTodos = new AVTodos();
-	               avTodos.set('content', dataString);
-	              avTodos.save().then(function (todo) {
-	                  console.log(todo);
-	              }, function (error) {
-	                  console.error(error);
-	              });*/
 	            //debugger
-
 	            window.localStorage.setItem('save', _this5.newTodo);
-	        }; //
+	        };
 	        this.currentUser = this.getCurrentUser();
 	        console.log(this.currentUser); //createdAt username id
 	        this.fetchTodos();
-
-	        //let oldDataString = window.localStorage.getItem('myTodos')
-	        //let oldData = JSON.parse(oldDataString)
-	        // this.todoList = oldData || []
 
 	        this.newTodo = window.localStorage.getItem('save') || '';
 	    }
