@@ -64,12 +64,12 @@ var app = new Vue({
                     });
                 }
                 this.newTodo = '';
-                this.saveOrUpdateTodos();
+                //this.saveOrUpdateTodos();
             },
             removeTodo: function (todo) {
                 var idx = this.todoList.indexOf(todo);
                 this.todoList.splice(idx, 1); //splice
-                this.saveOrUpdateTodos();
+                //this.saveOrUpdateTodos();
             },
             signUp: function () {
                 let user = new AV.User();

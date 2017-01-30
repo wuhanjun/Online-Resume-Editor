@@ -116,12 +116,12 @@
 	                    done: false });
 	            }
 	            this.newTodo = '';
-	            this.saveOrUpdateTodos();
+	            //this.saveOrUpdateTodos();
 	        },
 	        removeTodo: function removeTodo(todo) {
 	            var idx = this.todoList.indexOf(todo);
 	            this.todoList.splice(idx, 1); //splice
-	            this.saveOrUpdateTodos();
+	            //this.saveOrUpdateTodos();
 	        },
 	        signUp: function signUp() {
 	            var _this = this;
