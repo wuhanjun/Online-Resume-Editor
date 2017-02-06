@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4</title>
+</head>
+<body>
+<script type="text/javascript">
+	(function () {
+	  console.log(this)
+}).call({a:1});
+
+  (function () {
+    console.log(this);
+  })()
+window.a = function () {
+	console.log(this)
+};
+  window.a();
+  var b =  function () {
+    console.log(this)
+  };
+  b();
+
+
+
+
+  String.prototype.getMostOften = function (){
+  var hashMap= {}
+  for(var key in this){  //for(in)会遍历到对象原型链上的属性。
+    if(this.hasOwnProperty(key)){
+        var strValue = this[key]
+    }
+      if(!hashMap[strValue]){
+        hashMap[strValue] = 0;
+      }
+      hashMap[strValue]++
+    }
+  //最终结果
+  var Char = '';
+  var biggest = 0;
+  for(var _key in hashMap){
+    if(hashMap[_key]>biggest){
+      biggest = hashMap[_key];
+      Char = _key
+    }
+  }
+  console.log(Char);
+  console.log(biggest)
+}
+var str='fffffffjfdsafji';
+var ch = str.getMostOften();
+
+
+
+
+
+function lala(str) {
+    var arr = [];
+    for(var i=0;i<str.length;i++){
+        var n = arr.indexOf(str[i]);  //返回位置或-1
+        if(n != -1){
+            arr[n][1] ++;
+            console.log(arr[n][1])
+        }else{
+          console.log(1);
+            arr.push([str[i]])
+        }
+    }
+    arr.sort(function (a,b) {
+        return b[1]-a[1]
+    });
+    console.log( arr[0][0] );
+}
+lala('aasss')
+
+
+
+
+function la(str) {
+    var arr = [];
+    for(var i = 0;i<str.length;i++){
+        var n = arr.indexOf(str[i][0]);
+        if(n != -1){
+            arr[n][1] ++;
+            console.log(arr[n][1]);
+        }else{
+            arr.push([str[i],1])
+        }
+    }
+    arr.sort(function (a,b) {
+        return b[1]-a[1]
+    });
+    console.log(arr[0][0]) ;
+}
+la('rlllkkkkaaaa a');
+
+var c = d = 1;
+  c++ d--
+  console.log(c,d);
+</script>
+</body>
+</html>
