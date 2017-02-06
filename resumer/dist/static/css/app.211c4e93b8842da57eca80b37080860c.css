@@ -19,7 +19,7 @@
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;/*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
-  width: 100%;/*如果没有这句main宽度就是1024px。*/
+  width: 100%;/*如果没有这句main宽度就是1024px。自动收缩*/
   -ms-flex-item-align: center;
       align-self: center;  /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
 }
@@ -561,4 +561,4 @@ a[data-v-524cd6bc] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.99ccefdd3df6becb6a4aae98cadc4d53.css.map*/
+/*# sourceMappingURL=app.211c4e93b8842da57eca80b37080860c.css.map*/

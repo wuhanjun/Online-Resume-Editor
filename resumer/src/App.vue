@@ -43,7 +43,7 @@ export default {
     padding: 0 16px;
     display: flex;
     justify-content: space-between;/*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
-    width: 100%;/*如果没有这句main宽度就是1024px。*/
+    width: 100%;/*如果没有这句main宽度就是1024px。自动收缩*/
     align-self: center;  /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
 
   }
