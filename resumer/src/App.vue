@@ -33,7 +33,6 @@ export default {
     display: flex;
     flex-direction: column;  /*主轴为列*/
     background-color: #eaebec;
-
   }
   .page>main {
     flex-grow: 1; /*主轴上伸缩项目按照比例占据剩余空间。*/
@@ -41,10 +40,12 @@ export default {
     min-width: 1024px;
     margin-top: 16px;
     margin-bottom: 16px;
+    padding: 0 16px;
     display: flex;
-    justify-content: space-around; /*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
+    justify-content: space-between;/*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
     width: 100%;/*如果没有这句main宽度就是1024px。*/
-    align-self: center;  /*写在伸缩项目中，可覆盖父层align-items属性。*/
+    align-self: center;  /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
+
   }
   #top-bar {
 
