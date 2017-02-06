@@ -18,7 +18,6 @@
     min-width: 1024px;
     height: 64px;
     margin: 0 auto;
-    padding: 0 16px;
   }
   #top-bar>.wrapper {
     display: flex;
