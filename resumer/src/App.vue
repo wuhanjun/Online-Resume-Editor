@@ -56,7 +56,8 @@ export default {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
   }
   #resume-preview {
-    width: 61.66667%;
+    flex-grow: 1; /*位于主轴的项目进行拉伸。上级盒子新定义了flex,默认主轴方向为横向。*/
+    margin-left: 16px;
     background-color: #fff;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
   }
