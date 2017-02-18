@@ -1,46 +1,56 @@
 
+@charset "UTF-8";
 .page {
-  height: 100vh; /*相对视窗*/
+  height: 100vh;
+  /*相对视窗*/
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column; /*主轴为列*/
+      flex-direction: column;
+  /*主轴为列*/
   background-color: #eaebec;
->
-main {
-  -ms-flex-positive: 1;
-      flex-grow: 1; /*主轴上伸缩项目按照比例占据剩余空间。*/
 }
->
-main {
-
-  max-width: 1440px;
-  min-width: 1024px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding: 0 16px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between; /*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
-  width: 100%; /*如果没有这句main宽度就是1024px。自动收缩*/
-  -ms-flex-item-align: center;
-      align-self: center; /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
+.page > main {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    /*主轴上伸缩项目按照比例占据剩余空间。*/
 }
+.page > main {
+    max-width: 1440px;
+    min-width: 1024px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    /*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
+    width: 100%;
+    /*如果没有这句main宽度就是1024px。自动收缩*/
+    -ms-flex-item-align: center;
+        align-self: center;
+    /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
 }
-#top-bar {
+.page #resume-editor {
+    background-color: #fff;
+    width: 35%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
-#resume-editor {
-  background-color: #fff;
-  width: 35%;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+.page #resume-preview {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    /*位于主轴的项目进行拉伸。上级盒子新定义了flex,默认主轴方向为横向。*/
+    margin-left: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
-#resume-preview {
-  -ms-flex-positive: 1;
-      flex-grow: 1; /*位于主轴的项目进行拉伸。上级盒子新定义了flex,默认主轴方向为横向。*/
-  margin-left: 16px;
-  background-color: #fff;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+svg.icon {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: -0.1em;
+  font-size: 16px;
 }
 *{
   margin: 0;
@@ -512,37 +522,98 @@ template {
   display: none;
 }
 
-#top-bar {
+#top-bar[data-v-12e45004] {
   background-color: #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
-#top-bar >.wrapper {
-  max-width: 1440px;
-  min-width: 1024px;
-  height: 64px;
-  margin: 0 auto;
-  padding: 0 16px;
+#top-bar > .wrapper[data-v-12e45004] {
+    max-width: 1440px;
+    min-width: 1024px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
-#top-bar>.wrapper {
+#top-bar > .wrapper[data-v-12e45004] {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+}
+#top-bar .logo[data-v-12e45004] {
+    font-size: 24px;
+    font-family: "Arial";
+}
+button[data-v-12e45004] {
+  width: 72px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background: #ddd;
+  color: #222;
+}
+button[data-v-12e45004]:hover {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+button.primary[data-v-12e45004] {
+    background: #02af5f;
+    color: #fff;
+}
+
+#resume-editor[data-v-53358100] {
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: center;
-      align-items: center;
+  overflow: auto;
 }
-#top-bar .logo {
-  font-size: 24px;
-  font-family: "Arial";
+#resume-editor > nav[data-v-53358100] {
+    width: 80px;
+    background: #000;
+    color: #fff;
 }
-
-
-
-
-
-
-
-
+#resume-editor > nav > ol > li[data-v-53358100] {
+      height: 48px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      margin-top: 16px;
+      margin-bottom: 16px;
+}
+#resume-editor > nav > ol > li.active[data-v-53358100] {
+        background: #fff;
+        color: #000;
+}
+#resume-editor > .panels[data-v-53358100] {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+}
+#resume-editor > .panels > li[data-v-53358100] {
+      padding: 24px;
+}
+#resume-editor svg.icon[data-v-53358100] {
+    width: 24px;
+    height: 24px;
+}
+ol[data-v-53358100] {
+  list-style: none;
+}
+.resumeField > label[data-v-53358100] {
+  display: block;
+}
+.resumeField input[type=text][data-v-53358100] {
+  margin: 16px 0;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+}
 
 
 
@@ -567,4 +638,4 @@ a[data-v-524cd6bc] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.712eff367140ca9aa1e62cb7b9d159a2.css.map*/
+/*# sourceMappingURL=app.2d094809603591d62ee8b24a6547e6d5.css.map*/
