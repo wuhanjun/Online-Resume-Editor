@@ -34,7 +34,7 @@ module.exports = {
   },
   module: {
     rules: [
-      {
+     /* {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: "pre",
@@ -42,7 +42,7 @@ module.exports = {
         options: {
           formatter: eslintFriendlyFormatter
         }
-      },
+      },*/
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -72,7 +72,20 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass?sourceMap'
+      },
+      {
+        test: /\.jade$/,
+        loader: "jade"
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug'
       }
+
     ]
   }
 }

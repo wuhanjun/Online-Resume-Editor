@@ -1,15 +1,19 @@
 
 .page {
-  height: 100vh;/*相对视窗*/
+  height: 100vh; /*相对视窗*/
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;  /*主轴为列*/
+      flex-direction: column; /*主轴为列*/
   background-color: #eaebec;
-}
-.page>main {
+>
+main {
   -ms-flex-positive: 1;
       flex-grow: 1; /*主轴上伸缩项目按照比例占据剩余空间。*/
+}
+>
+main {
+
   max-width: 1440px;
   min-width: 1024px;
   margin-top: 16px;
@@ -18,10 +22,11 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;/*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
-  width: 100%;/*如果没有这句main宽度就是1024px。自动收缩*/
+      justify-content: space-between; /*注意这里的main也为容器，默认主轴为X方向。伸缩项目平均分布，剩余空间宽度值为项目间距一半*/
+  width: 100%; /*如果没有这句main宽度就是1024px。自动收缩*/
   -ms-flex-item-align: center;
-      align-self: center;  /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
+      align-self: center; /*注意别看错了，让整个main居中。写在伸缩项目中，可覆盖父层align-items属性。*/
+}
 }
 #top-bar {
 }
@@ -562,4 +567,4 @@ a[data-v-524cd6bc] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.e76ed9ade90bb03a3c95a7cbb26f8c6e.css.map*/
+/*# sourceMappingURL=app.712eff367140ca9aa1e62cb7b9d159a2.css.map*/
