@@ -11,24 +11,21 @@
 </template>
 
 <script>
-import './assets/reset.css'
-import 'normalize.css/normalize.css'
-import TopBar from './components/TopBar'
-import ResumeEditor from './components/ResumeEditor'
-import ResumePreview from './components/ResumePreview'
-import icons from './assets/icons'
-export default {
-  name: 'app',
-  data: function () {
-    return {
-      text: '你的名字'
+  import '../assets/reset.css'
+  import 'normalize.css'
+  import TopBar from './TopBar'
+  import ResumeEditor from './ResumeEditor'
+  import ResumePreview from './ResumePreview'
+  import icons from '../assets/icons'
+  import store from '../store/index.js'
+  export default {
+    name: 'app',
+    store,
+    components: {TopBar, ResumeEditor, ResumePreview},
+    created: function() {
+      document.body.insertAdjacentHTML('afterbegin', icons)
     }
-  },
-  components: {TopBar, ResumeEditor, ResumePreview},
-  created() {
-    document.body.insertAdjacentHTML('afterbegin', icons)
   }
-}
 </script>
 
 <style lang="scss">
@@ -55,7 +52,7 @@ export default {
 
   #resume-editor {
     background-color: #fff;
-    width: 35%;
+    min-width: 35%;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
   }
 

@@ -34,7 +34,7 @@
 }
 .page #resume-editor {
     background-color: #fff;
-    width: 35%;
+    min-width: 35%;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 .page #resume-preview {
@@ -615,13 +615,53 @@ ol[data-v-53358100] {
   padding: 0 8px;
 }
 
-
-
-
-
-
-
-
+@charset "UTF-8";
+#resume-preview {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  padding: 2em;
+  /*所有字体间距调整都用em，方便控制。*/
+  color: #333;
+  line-height: 1.2;
+  overflow: auto;
+}
+#resume-preview * {
+    box-sizing: border-box;
+    font-variant: normal;
+    font-weight: normal;
+    /*将标题文字的bold变为normal。文字变细*/
+}
+#resume-preview ol {
+    list-style: none;
+}
+#resume-preview section + section {
+    margin-top: 2em;
+    /*这样的话，最上面一个就不会有margin-top，避免了外边距合并的问题*/
+}
+#resume-preview p {
+    white-space: pre-line;
+}
+#resume-preview section > h2:first-child {
+    background: #ddd;
+    display: inline-block;
+    padding: .2em;
+    margin-bottom: .5em;
+}
+#resume-preview section[data-name="profile"] > h1 {
+    margin: .1em 0;
+    font-size: 4em;
+}
+#resume-preview section[data-name="workHistory"] li + li {
+    margin-top: 1em;
+}
+#resume-preview section[data-name="workHistory"] li h3 {
+    border-bottom: 1px solid #999;
+    padding-bottom: .3em;
+    margin-bottom: .3em;
+}
+#resume-preview section[data-name="education"] li {
+    line-height: 1.5;
+}
 
 h1[data-v-524cd6bc], h2[data-v-524cd6bc] {
   font-weight: normal;
@@ -638,4 +678,4 @@ a[data-v-524cd6bc] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.2d094809603591d62ee8b24a6547e6d5.css.map*/
+/*# sourceMappingURL=app.59462d7c483b894e1f72e46f75adc171.css.map*/
